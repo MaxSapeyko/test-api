@@ -28,9 +28,6 @@ const start = async () => {
     await mongoose.connect(
       'mongodb+srv://unicode:yslY5G8yagSMk9H7@users.lpuxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
       {
-        useNewUrlParser: true,
-        useFindAndModify: false,
-        useUnifiedTopology: true,
       }
     );
     app.listen(process.env.PORT || 5000, () => {

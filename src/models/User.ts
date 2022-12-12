@@ -6,12 +6,9 @@ const databaseName = process.env.DATABASE_NAME;
 const connection = mongoose.createConnection(
   'mongodb+srv://unicode:yslY5G8yagSMk9H7@users.lpuxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
   }
 );
-
+mongoose.set('strictQuery', true);
 autoIncrement.initialize(connection);
 
 const userSchema = new Schema({
