@@ -1,5 +1,5 @@
 import mongoose, { Schema, model } from "mongoose";
-import autoIncrement from "mongoose-auto-increment";
+// import autoIncrement from "mongoose-auto-increment";
 import { flattenDiagnosticMessageText } from "typescript";
 
 const databaseName = process.env.DATABASE_NAME;
@@ -9,7 +9,7 @@ const connection = mongoose.createConnection(
   }
 );
 mongoose.set('strictQuery', true);
-autoIncrement.initialize(connection);
+// autoIncrement.initialize(connection);
 
 const userSchema = new Schema({
   firstName: {
@@ -164,6 +164,6 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.plugin(autoIncrement.plugin, "User");
+// userSchema.plugin(autoIncrement.plugin, "User");
 
 export default model("User", userSchema);
